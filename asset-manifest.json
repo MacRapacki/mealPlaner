@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/mealPlaner/static/css/main.8dacac31.css",
+    "main.js": "/mealPlaner/static/js/main.2508997b.js",
+    "static/js/787.28cb0dcd.chunk.js": "/mealPlaner/static/js/787.28cb0dcd.chunk.js",
+    "static/media/gruszkaSzejk.jpg": "/mealPlaner/static/media/gruszkaSzejk.4afcfe112bb0b06f0810.jpg",
+    "index.html": "/mealPlaner/index.html",
+    "main.8dacac31.css.map": "/mealPlaner/static/css/main.8dacac31.css.map",
+    "main.2508997b.js.map": "/mealPlaner/static/js/main.2508997b.js.map",
+    "787.28cb0dcd.chunk.js.map": "/mealPlaner/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8dacac31.css",
+    "static/js/main.2508997b.js"
+  ]
+}
