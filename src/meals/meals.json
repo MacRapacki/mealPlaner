@@ -1,0 +1,21 @@
+[
+    {
+        "name": "owsianka",
+        "ingredients": [
+            { "name": "platki owsiane", "amount": 100 },
+            { "name": "owoce", "amount": 50 },
+            { "name": "mleko", "amount": 80 }
+        ],
+        "totalGrams": 500,
+        "totalCalories": 1000
+    },
+    {
+        "name": "platki",
+        "ingredients": [
+            { "name": "platki smakowe", "amount": 100 },
+            { "name": "mleko", "amount": 80 }
+        ],
+        "totalGrams": 300,
+        "totalCalories": 600
+    }
+]
