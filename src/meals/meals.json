@@ -1,21 +1,35 @@
 [
     {
-        "name": "owsianka",
+        "name": "Jaglanka z truskawkami, żurawiną i orzechami laskowymi",
         "ingredients": [
-            { "name": "platki owsiane", "amount": 100 },
-            { "name": "owoce", "amount": 50 },
-            { "name": "mleko", "amount": 80 }
+            {
+                "name": "orzechy laskowe",
+                "amount": 25,
+                "description": "1 garść"
+            },
+            {
+                "name": "płatki jaglane",
+                "amount": 60,
+                "description": "6,5 łyżki"
+            },
+            {
+                "name": "truskawki (świeże lub mrożone)",
+                "amount": 100,
+                "description": "0,5 szklanki"
+            },
+            {
+                "name": "żurawina suszona",
+                "amount": 15,
+                "description": "2,5 łyżeczki"
+            },
+            {
+                "name": "mleko 2%",
+                "amount": 250,
+                "description": "1,1 szklanki"
+            }
         ],
-        "totalGrams": 500,
-        "totalCalories": 1000
-    },
-    {
-        "name": "platki",
-        "ingredients": [
-            { "name": "platki smakowe", "amount": 100 },
-            { "name": "mleko", "amount": 80 }
-        ],
-        "totalGrams": 300,
-        "totalCalories": 600
+
+        "totalCalories": 638,
+        "category": "breakfast"
     }
 ]

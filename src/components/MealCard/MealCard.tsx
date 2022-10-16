@@ -4,20 +4,14 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useRef, useState } from 'react';
 import gruszka from 'assets/mealsPictures/gruszkaSzejk.jpg';
-
-type Meal = {
-    name: string;
-    ingredients: { name: string; amount: number }[];
-    totalGrams: number;
-    totalCalories: number;
-};
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Meal } from 'meals/types';
 
 interface MealCardProps {
     meal: Meal;
 }
 
 const MealCard = ({ meal }: MealCardProps) => {
-    const [precent, setPrecent] = useState(0);
     const [mealDetails, setMealDetails] = useState(meal);
     const kcalRef = useRef<HTMLInputElement | null>(null);
 
@@ -30,13 +24,12 @@ const MealCard = ({ meal }: MealCardProps) => {
                 meal.totalCalories
             ).toFixed(0);
 
-            setPrecent(precentDiff);
-
             const modifiedIngredients = [
                 ...meal.ingredients.map((ingredient) => {
                     return {
                         name: ingredient.name,
                         amount: (ingredient.amount * precentDiff) / 100,
+                        description: ingredient.description,
                     };
                 }),
             ];
@@ -45,7 +38,6 @@ const MealCard = ({ meal }: MealCardProps) => {
                 if (kcalRef.current) {
                     return {
                         ...prev,
-                        totalGrams: (meal.totalGrams * precentDiff) / 100,
                         totalCalories: +kcalRef.current.value,
                         ingredients: modifiedIngredients,
                     };
@@ -56,10 +48,10 @@ const MealCard = ({ meal }: MealCardProps) => {
     };
 
     return (
-        <Card style={{ width: '300px', height: '500px' }}>
+        <Card style={{ width: '300px' }}>
             <Card.Body>
                 <Card.Img
-                    className='mb-3'
+                    className='mb-4'
                     src={gruszka}
                     style={{
                         width: '100%',
@@ -67,16 +59,30 @@ const MealCard = ({ meal }: MealCardProps) => {
                         objectFit: 'cover',
                     }}
                 />
-                <Card.Header>{mealDetails.name}</Card.Header>
+                <Card.Header className='mb-3'>{mealDetails.name}</Card.Header>
                 <Card.Text>
                     {mealDetails.ingredients.map((ingredient, index) => (
                         <span key={index}>
                             {ingredient.name} {ingredient.amount}g <br />
                         </span>
                     ))}
-                    {mealDetails.totalGrams}g <br />
                     {mealDetails.totalCalories} kcal
                 </Card.Text>
+                <Dropdown>
+                    <Dropdown.Toggle variant='success' id='dropdown-basic'>
+                        Dropdown Button
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
+                        <Dropdown.Item href='#/action-2'>
+                            Another action
+                        </Dropdown.Item>
+                        <Dropdown.Item href='#/action-3'>
+                            Something else
+                        </Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
                 <Stack direction='horizontal' gap={5}>
                     <Form.Control
                         placeholder='kcal'
@@ -89,8 +95,8 @@ const MealCard = ({ meal }: MealCardProps) => {
                     >
                         Licz
                     </Button>
-                    {precent}
                 </Stack>
+                <Button variant='primary'>Dodaj</Button>
             </Card.Body>
         </Card>
     );
